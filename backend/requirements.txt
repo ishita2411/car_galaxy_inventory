@@ -1,0 +1,16 @@
+-e git+https://github.com/sampsyo/bril.git@0eedeea2536d5b7ef09655a7c2be03ce5045447b#egg=briltxt&subdirectory=bril-txt
+certifi==2024.6.2
+cffi @ file:///private/tmp/cffi-20231014-5567-1hyue8f/cffi-1.16.0
+charset-normalizer==3.3.2
+cryptography==42.0.8
+flit==3.9.0
+flit_core==3.9.0
+idna==3.6
+lark-parser==0.12.0
+pillow==10.3.0
+pycparser==2.22
+requests==2.31.0
+setuptools @ file:///private/tmp/python-setuptools-20231122-5040-cvipch/setuptools-69.0.2
+tomli_w==1.0.0
+urllib3==2.2.1
+wheel @ file:///opt/homebrew/Cellar/python%403.12/3.12.4/libexec/wheel-0.43.0-py3-none-any.whl#sha256=ff23205a590f2b902a2a21151019e96b93ab4a1409d7c9748b6bd210f4c0f44d
