@@ -5,6 +5,14 @@ from firebase_admin import initialize_app, firestore
 import google.cloud.firestore
 from firebase_functions import options
 
+
+from barcode import EAN13 
+from barcode.writer import ImageWriter 
+import base64
+from PIL import Image
+import io
+
+
 # from firebase_admin import firestore
 app = initialize_app()
 db = firestore.client()
@@ -81,6 +89,24 @@ def addItemDetails(req: https_fn.CallableRequest):
     return {
     'data': { 'success': 'true' }
 }
+
+
+@https_fn.on_call()
+def generateQrCode(req : https_fn.CallableRequest):
+    print('in')
+    number = '3154567890123'
+    my_code = EAN13(number, writer=ImageWriter()) 
+    print(my_code)
+    my_code.save("new_code6")
+
+  
+    with open("new_code6.png", "rb") as image2string: 
+        converted_string = base64.b64encode(image2string.read()) 
+    converted_string = str(converted_string)
+    
+    return {'base64' : converted_string[2:-1]}
+
+
 
 
 
