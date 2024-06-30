@@ -128,9 +128,13 @@ export default function supervisor(){
 
     function additemDetails(e: React.FormEvent<HTMLFormElement>){
         e.preventDefault();
-        console.log(itemName, company, productGrp, price, supplier)
+        // console.log(itemName, company, productGrp, price, supplier)
         const addItemDetailsFunction  = httpsCallable(functions, "addItemDetails");
-        addItemDetailsFunction().then((data) => {
+        addItemDetailsFunction({
+                        'itemName' : itemName,
+                        'productGrp' : productGrp,
+                        'company': company
+                    }).then((data) => {
             console.log('wtf')
                         }).catch((error) => {
                             router.push('/error')
@@ -236,9 +240,9 @@ export default function supervisor(){
                             </m.Select>
                     </m.FormControl>
                     </m.Stack>
-
+{/* 
                     <m.TextField type="text" label="Supplier" required onChange={(event) => setSupplier(event.target.value)} />
-                    <m.TextField type="text" label="Price" required onChange={(event) => setPrice(event.target.value)} />
+                    <m.TextField type="text" label="Price" required onChange={(event) => setPrice(event.target.value)} /> */}
 
                     <m.Button type="submit">Submit details</m.Button>
 

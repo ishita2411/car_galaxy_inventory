@@ -43,7 +43,7 @@ export default function addUsers(){
                         const x = JSON.stringify(data)
                         const d = JSON.parse(x)
                         if (d.data.role === 'staff'){
-                            router.push('/staff/generateQr')
+                            router.push('/staff/getProducts')
                         }
                         else{
                             setErrorMsg('This user does not have access to the Supervisor page')
@@ -71,7 +71,8 @@ export default function addUsers(){
         <m.Stack alignItems="center" spacing={2} >
             <m.Typography variant="h4" >
               Staff
-          <m.Divider orientation="horizontal" variant="fullWidth"/>          
+          <m.Divider orientation="horizontal" variant="fullWidth"/>   
+          </m.Typography>         
 
             <form onSubmit={signInStaff}>
                 <m.Stack spacing={2} >
@@ -84,7 +85,7 @@ export default function addUsers(){
             {errorMsg}
           </m.Typography>
 
-          </m.Typography>  
+          
         </m.Stack>
     )
     
